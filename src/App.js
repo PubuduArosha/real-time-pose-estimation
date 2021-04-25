@@ -8,10 +8,14 @@ import * as posenet from "@tensorflow-models/posenet";
 import Webcam from "react-webcam";
 
 function App() {
+  const webcamRef = useRef(null);
+  const canvasRef = useRef(null);
+
   return (
     <div className="App">
       <header className="App-header">
-        <Webcam 
+        <Webcam
+          ref={webcamRef}
           style={{
             position: "absolute",
             marginLeft: "auto",
@@ -27,6 +31,7 @@ function App() {
         />
 
         <canvas 
+          ref={canvasRef}
           style={{
             position: "absolute",
             marginLeft: "auto",
